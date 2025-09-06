@@ -7,12 +7,11 @@ import org.hibernate.type.SqlTypes;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;
-
 @Entity
 @Table(name = "pedido")
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
-
 public class Pedido {
+
     @Id
     @GeneratedValue
     @JdbcTypeCode(SqlTypes.UUID)
@@ -22,19 +21,20 @@ public class Pedido {
     @Column(nullable = false, length = 100)
     private String nombre;
 
-    @Column(name =  "creado_en", nullable = false)
+    @Column(name = "creado_en", nullable = false)
     private OffsetDateTime creadoEn;
 
     @Column(nullable = false, length = 100)
-    private String servicio;   
+    private String servicio;
 
     @Column(nullable = false, length = 100)
-    private String evento;   
+    private String evento;
 
     @Column(nullable = false, length = 100)
-    private String cliente;   
+    private String cliente;
 
+    @PrePersist
+    void prePersist() {
+        if (creadoEn == null) creadoEn = OffsetDateTime.now();
+    }
 }
-
-
-//id, nombre, fecha, servicio, evento, cliente, estado

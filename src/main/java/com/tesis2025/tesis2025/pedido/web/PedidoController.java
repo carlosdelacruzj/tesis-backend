@@ -1,9 +1,5 @@
 package com.tesis2025.tesis2025.pedido.web;
 
-import com.tesis2025.tesis2025.cliente.dto.ClienteResponse;
-import com.tesis2025.tesis2025.cliente.dto.CreateClienteRequest;
-import com.tesis2025.tesis2025.cliente.dto.UpdateClienteLegacy;
-import com.tesis2025.tesis2025.cliente.dto.UpdateClienteRequest;
 import com.tesis2025.tesis2025.pedido.application.PedidoService;
 import com.tesis2025.tesis2025.pedido.dto.*;
 import jakarta.validation.Valid;
