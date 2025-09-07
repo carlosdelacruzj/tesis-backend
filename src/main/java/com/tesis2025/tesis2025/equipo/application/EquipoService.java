@@ -6,9 +6,9 @@ import org.springframework.data.domain.Pageable;
 
 import java.util.UUID;
 
-public Interface EquipoService {
+public interface EquipoService {
     Page<EquipoResponse> list(String q, Pageable pageable);
     EquipoResponse get (UUID id);
-    EquipoReponse create(CreateEquipoRequest r);
+    EquipoResponse create(CreateEquipoRequest r);
     EquipoResponse update(UUID id, UpdateEquipoRequest req);
 }

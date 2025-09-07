@@ -5,7 +5,6 @@ import lombok.*;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
-import java.time.OffsetDateTime;
 import java.util.UUID;
 
 @Entity
@@ -18,6 +17,9 @@ public class Equipo {
     @JdbcTypeCode (SqlTypes.UUID)
     @Column(name="id_equipo")
     private UUID idEquipo;
+
+    @Column(nullable=false, length=100)
+    private String nombre;
 
     @Column(nullable=false, length=100)
     private String marca;
