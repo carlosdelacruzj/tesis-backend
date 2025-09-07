@@ -61,9 +61,9 @@ public class EquipoServiceImpl implements EquipoService {
     public EquipoResponse create(CreateEquipoRequest r) {
         var c = Equipo.builder()
                 .nombre(trim(r.nombre()))
-                .servicio(trim(r.marca()))
-                .evento(trim(r.modelo()))
-                .cliente(r.cantidad())
+                .marca(trim(r.marca()))
+                .modelo(trim(r.modelo()))
+                .cantidad(r.cantidad())
                 .build();
         return toResponse(repo.save(c));
     }
